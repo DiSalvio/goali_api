@@ -16,12 +16,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.authtoken.views import obtain_auth_token
-from goali.api.views import login, SignUpApiView
+from rest_framework import routers
+from goali.api.views import (
+    login,
+    SignUpApiView,
+    GoalListApiView,
+    GoalDetailApiView,
+    TaskListApiView,
+    TaskDetailApiView
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('goals/', include('goali.urls')),
+    path('goals/', GoalListApiView.as_view()),
+    path('goals/<int:goal_id>/', GoalDetailApiView.as_view()),
+    path('goals/<int:goal_id>/tasks/', TaskListApiView.as_view()),
+    path('goals/<int:goal_id>/tasks/<int:task_id>/', TaskDetailApiView.as_view()),
     path('token-auth/', obtain_auth_token, name='api_token_auth'),
     path('login/', login),
     path('signup/', SignUpApiView.as_view())

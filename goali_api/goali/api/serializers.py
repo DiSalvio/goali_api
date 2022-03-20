@@ -1,11 +1,16 @@
 from rest_framework import serializers
-from goali.models import Goal
+from goali.models import Goal, Task
 from django.contrib.auth.models import User
 
 class GoalSerializer(serializers.ModelSerializer):
     class Meta:
         model = Goal
         fields = ["id", "name", "description", "timestamp", "completed", "updated", "user"]
+
+class TaskSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Task
+        fields = ["id", "name", "description", "timestamp", "completed", "updated", "goal", "user"]
 
 class SignUpSerializer(serializers.ModelSerializer):
 

@@ -16,14 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.authtoken.views import obtain_auth_token
-from rest_framework import routers
 from goali.api.views import (
     login,
     SignUpApiView,
     GoalListApiView,
     GoalDetailApiView,
     TaskListApiView,
-    TaskDetailApiView
+    TaskDetailApiView,
+    SubTaskListApiView,
+    SubTaskDetailApiView
 )
 
 urlpatterns = [
@@ -33,6 +34,8 @@ urlpatterns = [
     path('goals/<int:goal_id>/', GoalDetailApiView.as_view()),
     path('goals/<int:goal_id>/tasks/', TaskListApiView.as_view()),
     path('goals/<int:goal_id>/tasks/<int:task_id>/', TaskDetailApiView.as_view()),
+    path('goals/<int:goal_id>/tasks/<int:task_id>/subtasks/', SubTaskListApiView.as_view()),
+    path('goals/<int:goal_id>/tasks/<int:task_id>/subtasks/<int:sub_task_id>/', SubTaskDetailApiView.as_view()),
     path('token-auth/', obtain_auth_token, name='api_token_auth'),
     path('login/', login),
     path('signup/', SignUpApiView.as_view())

@@ -8,6 +8,7 @@ class Goal(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False, blank=True)
     completed = models.BooleanField(default=False, blank=True)
     updated = models.DateTimeField(auto_now=True, blank=True)
+    removed = models.BooleanField(default=False, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
 
     def __str__(self):

@@ -12,6 +12,7 @@ class TaskSerializer(serializers.ModelSerializer):
             "timestamp",
             "completed",
             "updated",
+            "removed",
             "goal",
             "user"
         ]

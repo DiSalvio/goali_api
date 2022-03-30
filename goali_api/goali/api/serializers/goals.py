@@ -12,5 +12,6 @@ class GoalSerializer(serializers.ModelSerializer):
             "timestamp",
             "completed",
             "updated",
+            "removed",
             "user"
         ]

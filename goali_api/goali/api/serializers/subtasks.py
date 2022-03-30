@@ -12,6 +12,7 @@ class SubTaskSerializer(serializers.ModelSerializer):
             "timestamp",
             "completed",
             "updated",
+            "removed",
             "goal",
             "task",
             "user"

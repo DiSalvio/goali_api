@@ -18,6 +18,7 @@ from django.urls import path, include
 from rest_framework.authtoken.views import obtain_auth_token
 from goali.api.views import (
     login,
+    logout,
     SignUpApiView,
     GoalListApiView,
     GoalDetailApiView,
@@ -38,5 +39,6 @@ urlpatterns = [
     path('goals/<int:goal_id>/tasks/<int:task_id>/subtasks/<int:sub_task_id>/', SubTaskDetailApiView.as_view()),
     path('token-auth/', obtain_auth_token, name='api_token_auth'),
     path('login/', login),
-    path('signup/', SignUpApiView.as_view())
+    path('signup/', SignUpApiView.as_view()),
+    path('logout/', logout)
 ]

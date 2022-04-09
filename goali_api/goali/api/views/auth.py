@@ -17,7 +17,7 @@ def login(request):
     password = request.data.get("password")
     if username is None or password is None:
         return Response({'error': 'Please provide both username and password'},
-                        status=HTTP_400_BAD_REQUEST)
+                        status=status.HTTP_400_BAD_REQUEST)
     user = authenticate(username=username, password=password)
     if not user:
         return Response({'error': 'Invalid Credentials'},
@@ -26,6 +26,27 @@ def login(request):
     return Response({'token': token.key},
                     status=status.HTTP_200_OK)
 
+@csrf_exempt
+@api_view(["POST"])
+def logout(request):
+    token = request.data.get("token")
+    if token is None:
+        return Response({'error': 'Please provide token'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    try:
+        db_token = Token.objects.get(key=token)
+    except Token.DoesNotExist:
+        db_token = None
+    if db_token is None:
+        return Response(
+            {"res": "Object with token does not exist"},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    db_token.delete()
+    return Response(
+        {"res": "Token deleted!"},
+        status=status.HTTP_200_OK
+    )
 
 class SignUpApiView(APIView):
     def get(self, request):
@@ -41,3 +62,4 @@ class SignUpApiView(APIView):
 
         except Exception as e:
             return Response({'Message': f'Failed due to {e}'}, status=status.HTTP_400_BAD_REQUEST)
+

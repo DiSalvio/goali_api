@@ -89,6 +89,7 @@ class GoalTests(APITestCase):
             "name": "Changed goal",
             "description": "updated description",
             "completed": "true",
+            "removed": "false"
         }
         response = self.auth_client.put(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)

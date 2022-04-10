@@ -109,6 +109,7 @@ class TaskTests(APITestCase):
             "name": "Changed task",
             "description": "updated task description",
             "completed": "false",
+            "removed": "false"
         }
         response = self.auth_client.put(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)

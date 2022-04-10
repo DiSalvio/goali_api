@@ -49,6 +49,7 @@ class TaskDetailApiView(APIView):
             "name": request.data.get('name'),
             "description": request.data.get('description'),
             "completed": request.data.get('completed'),
+            "removed": request.data.get('removed'),
             "goal": self.kwargs.get('goal_id'),
             "user": request.user.id
         }

@@ -48,6 +48,7 @@ class GoalDetailApiView(APIView):
             "name": request.data.get('name'),
             "description": request.data.get('description'),
             "completed": request.data.get('completed'),
+            "removed": request.data.get('removed'),
             "user": request.user.id
         }
         serializer = GoalSerializer(instance=goal_instance, data=data, partial=True)

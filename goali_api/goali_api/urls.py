@@ -19,6 +19,7 @@ from rest_framework.authtoken.views import obtain_auth_token
 from goali.api.views import (
     login,
     logout,
+    token_check,
     SignUpApiView,
     GoalListApiView,
     GoalDetailApiView,
@@ -40,5 +41,6 @@ urlpatterns = [
     path('token-auth/', obtain_auth_token, name='api_token_auth'),
     path('login/', login),
     path('signup/', SignUpApiView.as_view()),
-    path('logout/', logout)
+    path('logout/', logout),
+    path('token/', token_check)
 ]

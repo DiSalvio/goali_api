@@ -6,6 +6,7 @@ from datetime import datetime, timedelta
 from django.conf import settings
 from django.utils import timezone
 
+
 def token_expires_in(token):
     time_elapsed = timezone.now() - token.created
     return timedelta(seconds=float(settings.TOKEN_EXPIRED_AFTER_SECONDS)) - time_elapsed
@@ -25,5 +26,5 @@ class ExpiringTokenAuthentication(TokenAuthentication):
         if is_token_expired(token):
             token.delete()
             raise AuthenticationFailed("The Token is expired")
-        
+
         return (token.user, token)

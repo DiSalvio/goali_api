@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
+from .authentication import is_token_expired
 
 
 @csrf_exempt
@@ -46,3 +47,24 @@ def logout(request):
         {"res": "Token deleted!"},
         status=status.HTTP_200_OK
     )
+
+
+@csrf_exempt
+@api_view(["POST"])
+def token_check(request):
+    key = request.data.get("token")
+    if key is None:
+        return Response({'error': 'Please provide token'},
+                        status=status.HTTP_400_BAD_REQUEST)
+    try:
+        token = Token.objects.get(key=key)
+    except Token.DoesNotExist:
+        return Response({'error': 'Invalid Token'},
+                        status=status.HTTP_404_NOT_FOUND)
+
+    if is_token_expired(token):
+        token.delete()
+        return Response({'error': 'The Token is expired'},
+                        status=status.HTTP_401_UNAUTHORIZED)
+
+    return Response({'token': key}, status=status.HTTP_200_OK)

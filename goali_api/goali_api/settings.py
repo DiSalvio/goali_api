@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 # from dotenv import load_dotenv
 
 # load_dotenv()
@@ -31,7 +32,8 @@ TOKEN_EXPIRED_AFTER_SECONDS = os.getenv('TOKEN_EXPIRED_AFTER_SECONDS')
 DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = [
-    os.getenv('ALLOWED_HOSTS')
+    os.getenv('ALLOWED_HOST_LOCAL'),
+    os.getenv('ALLOWED_HOST_PROD')
 ]
 
 CORS_ALLOWED_ORIGINS = [
@@ -105,6 +107,8 @@ DATABASES = {
     }
 }
 
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

@@ -32,8 +32,8 @@ TOKEN_EXPIRED_AFTER_SECONDS = os.getenv('TOKEN_EXPIRED_AFTER_SECONDS')
 DEBUG = os.getenv('DEBUG')
 
 ALLOWED_HOSTS = [
-    os.getenv('ALLOWED_HOST_LOCAL'),
-    os.getenv('ALLOWED_HOST_PROD')
+    '127.0.0.1',
+    'goali-api.herokuapp.com'
 ]
 
 CORS_ALLOWED_ORIGINS = [

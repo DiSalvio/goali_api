@@ -10,6 +10,7 @@ gunicorn = "*"
 dj-database-url = "*"
 whitenoise = "*"
 psycopg2-binary = "*"
+django-cors-headers = "*"
 
 [dev-packages]
 psycopg2 = "*"

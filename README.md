@@ -1,4 +1,4 @@
-goali.netlify.app
+Check out the deployed app here: https://www.goali.netlify.app
 
 Manages goals, tasks, and subtasks to stay organized
 

@@ -1,9 +1,9 @@
-Check out the deployed app here: https://www.goali.netlify.app
+# Check out the deployed app here: https://www.goali.netlify.app
 
-Manages goals, tasks, and subtasks to stay organized
+## Manages goals, tasks, and subtasks to stay organized
 
 
-# To use this API on your machine:
+#### To use this API on your machine:
 
 `pip install pipenv`
 

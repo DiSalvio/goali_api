@@ -4,12 +4,11 @@ Manages goals, tasks, and subtasks to stay organized
 
 To use this API on your machine:
 
-`
-pip install pipenv
 
-pipenv shell
+`pip install pipenv`
 
-pipenv install
+`pipenv shell`
 
-python manage.py runserver
-`
+`pipenv install`
+
+`python manage.py runserver`

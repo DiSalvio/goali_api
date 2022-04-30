@@ -5,6 +5,8 @@
 
 #### To use this API on your machine:
 
+Install Python3 (3.9.10)
+
 `pip install pipenv`
 
 `pipenv shell`

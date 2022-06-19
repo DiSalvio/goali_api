@@ -34,7 +34,7 @@ DEBUG = os.getenv('DEBUG')
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'goali-api.herokuapp.com',
-    os.getenv('ALLOWED_HOSTS_PROD')
+    'damp-hamlet-38549.herokuapp.com'
 ]
 
 CORS_ALLOWED_ORIGINS = [

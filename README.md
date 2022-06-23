@@ -1,6 +1,6 @@
 # Goali
 
-## Manages goals, tasks, and subtasks to stay organized
+## Manages goals, tasks, and subtasks to help you stay organized
 
 # Jenkins Unit Tests Job Status
 

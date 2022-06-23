@@ -5,7 +5,7 @@ from ..serializers import SignUpSerializer
 
 class SignUpApiView(APIView):
     def get(self, request):
-        return Response({'Message': 'This is get method of signup API'}, status=status.HTTP_200_OK)
+        return Response({'Message': 'This is get method of Sign Up API'}, status=status.HTTP_200_OK)
 
     def post(self, request):
         try:

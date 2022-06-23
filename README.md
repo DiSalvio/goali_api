@@ -17,4 +17,12 @@ Install Python3 (3.9.10)
 
 `pipenv install`
 
-`python manage.py runserver`
+`pipenv run python manage.py migrate`
+
+`pipenv run python manage.py runserver`
+
+#### To run unit tests:
+
+`pipenv run python manage.py migrate`
+
+`pipenv run python manage.py test`

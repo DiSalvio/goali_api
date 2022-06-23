@@ -28,4 +28,4 @@ Install Python3 (3.9.10)
 
 `pipenv run python manage.py test`
 
-#### API test environment is deployed to: https://damp-hamlet-38549.herokuapp.com/
+#### API test env is deployed to: https://damp-hamlet-38549.herokuapp.com/

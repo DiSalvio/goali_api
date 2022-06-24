@@ -30,4 +30,6 @@ Install Python3 (3.9.10)
 
 #### API test env deploy status: https://damp-hamlet-38549.herokuapp.com/
 
+If unit tests are successfully run, this app is deployed to a test environment for API testing.
+
 [![Build Status](https://ecb4-199-101-192-72.ngrok.io/buildStatus/icon?job=deploy_goali_api_test_environment)](https://ecb4-199-101-192-72.ngrok.io/job/deploy_goali_api_test_environment/)

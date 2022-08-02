@@ -4,7 +4,11 @@
 
 # Jenkins Unit Tests Job Status
 
-[![Build Status](https://ecb4-199-101-192-72.ngrok.io/buildStatus/icon?job=goali_api_unit_tests)](https://ecb4-199-101-192-72.ngrok.io/job/goali_api_unit_tests/)
+[![Build Status](https://2b59-199-101-192-89.ngrok.io/buildStatus/icon?job=goali_api_unit_tests)](https://2b59-199-101-192-89.ngrok.io/job/goali_api_unit_tests/)
+
+# Jenkins Testing Environment Deploy Status
+
+[![Build Status](https://2b59-199-101-192-89.ngrok.io/buildStatus/icon?job=deploy_goali_api_test_environment)](https://2b59-199-101-192-89.ngrok.io/job/deploy_goali_api_test_environment/)
 
 # Check out the deployed app here: https://www.goali.netlify.app
 

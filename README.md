@@ -10,6 +10,10 @@
 
 [![Build Status](https://2b59-199-101-192-89.ngrok.io/buildStatus/icon?job=deploy_goali_api_test_environment)](https://2b59-199-101-192-89.ngrok.io/job/deploy_goali_api_test_environment/)
 
+# Jenkins API Testing Job Status
+
+[![Build Status](https://2b59-199-101-192-89.ngrok.io/buildStatus/icon?job=goali_api_tests)](https://2b59-199-101-192-89.ngrok.io/job/goali_api_tests/)
+
 # Check out the deployed app here: https://www.goali.netlify.app
 
 #### To use this API on your machine:

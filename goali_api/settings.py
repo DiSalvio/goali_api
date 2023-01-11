@@ -35,11 +35,7 @@ TOKEN_EXPIRED_AFTER_SECONDS = os.getenv('TOKEN_EXPIRED_AFTER_SECONDS')
 DEBUG = os.getenv('DEBUG', "False") == "True"
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
-ALLOWED_HOSTS = [
-    '127.0.0.1',
-    'localhost',
-    os.getenv("ALLOWED_HOSTS").split(",")
-]
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 CORS_ALLOWED_ORIGINS = [
     os.getenv('VUE_APP_URL')

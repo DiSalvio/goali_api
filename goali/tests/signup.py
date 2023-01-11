@@ -13,7 +13,7 @@ class SignUpTests(APITestCase):
         data = {}
         response = self.client.get(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(self.decode_message(response), "This is get method of signup API")
+        self.assertEqual(self.decode_message(response), "This is get method of Sign Up API")
 
     def test_valid_sign_up(self):
 

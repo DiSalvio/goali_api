@@ -1,11 +1,19 @@
-# Jenkins Unit Tests
+# Goali
+## Manages goals, tasks, and sub-tasks to help you stay organized
 
-[![Build Status](https://167c-94-177-118-63.ngrok.io/buildStatus/icon?job=goali_api_tests)](http://localhost:8080/job/goali_api_tests/)
+# Jenkins Unit Tests Job Status
+
+[![Build Status](https://2b59-199-101-192-89.ngrok.io/buildStatus/icon?job=goali_api_unit_tests)](https://2b59-199-101-192-89.ngrok.io/job/goali_api_unit_tests/)
+
+# Jenkins Testing Environment Deploy Status
+
+[![Build Status](https://2b59-199-101-192-89.ngrok.io/buildStatus/icon?job=deploy_goali_api_test_environment)](https://2b59-199-101-192-89.ngrok.io/job/deploy_goali_api_test_environment/)
+
+# Jenkins API Testing Job Status
+
+[![Build Status](https://2b59-199-101-192-89.ngrok.io/buildStatus/icon?job=goali_api_tests)](https://2b59-199-101-192-89.ngrok.io/job/goali_api_tests/)
 
 # Check out the deployed app here: https://www.goali.netlify.app
-
-## Manages goals, tasks, and subtasks to stay organized
-
 
 #### To use this API on your machine:
 
@@ -17,4 +25,18 @@ Install Python3 (3.9.10)
 
 `pipenv install`
 
-`python manage.py runserver`
+`pipenv run python manage.py migrate`
+
+`pipenv run python manage.py runserver`
+
+#### To run unit tests:
+
+`pipenv run python manage.py migrate`
+
+`pipenv run python manage.py test`
+
+#### API test env deploy status: https://damp-hamlet-38549.herokuapp.com/
+
+If unit tests are successfully run, this app is deployed to a test environment for API testing.
+
+[![Build Status](https://ecb4-199-101-192-72.ngrok.io/buildStatus/icon?job=deploy_goali_api_test_environment)](https://ecb4-199-101-192-72.ngrok.io/job/deploy_goali_api_test_environment/)
